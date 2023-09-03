@@ -1,0 +1,3 @@
+Requirements:
+Python3
+pip: os, PIL Image, PIL ImageDraw, xml.etree.ElementTree

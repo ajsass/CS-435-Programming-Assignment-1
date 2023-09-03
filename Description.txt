@@ -1,0 +1,24 @@
+To create this tool I broke the problem into three parts
+
+1: Recognizing file pairs
+2: Finding Leaf level xml nodes
+3: Drawing boxes around coordinates
+
+I split the tool into three files as each file uses a different imported module and has a different purpose
+
+1: 
+The first file is GUICircler.py this is the main/driver code and only contains a main function. It uses the os
+module to identify xml/png pairs and then for each pair the code runs the other two files to find leafs and circle them.
+
+2:
+the second file is boundsGet.py, this file uses the ElementTree module to find all leaf level nodes and find thier bounds
+It first initializes the xml tree, then recursivley finds the leaf level nodes. When it does it finds thier "bounds" attribute
+and adds it to a list and once all are found, returns the list.
+
+3:
+the third file is boxDraw.py it uses PIL Image and ImageDraw to draw boxes around each leaf item. It takes each item of the 
+bounds list and splits it into 4 integers, then draws 4 lines around each item.
+
+
+I split the code into 3 files as each file serves a different purpose and doesnt need to interact beyond passing a single list.
+For troubleshooting this made things easier as I could test each file seperatley and identify errors much easier.
